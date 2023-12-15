@@ -50,13 +50,15 @@ public class CursosService {
 	}
 	
 	public void eliminarCurso(String nombre) {
-		for(int i=0;i<cursos.size();i++) {//necesitamos un índice, por eso usamos un for normal
+		/*for(int i=0;i<cursos.size();i++) {//necesitamos un índice, por eso usamos un for normal
 			if(cursos.get(i).getNombre().equals(nombre)) {
 				cursos.remove(i);
 				break;//nos salimos para no seguir recorriendo
 			}
-		}
+		}*/
 		
+		//lo hacemos con una expresión lambda
+		cursos.removeIf(c->c.getNombre().equals(nombre));
 	}
 	
 	public void modificarDuracion(String nombre, int nuevaDuracion) {
